@@ -1,0 +1,56 @@
+I want you to create a complete ERP web application in PHP (with MySQL database) to manage incomes and expenses for a Masjid.  
+
+**Roles & Permissions:**  
+1. **Admin** – Has all rights of both Manager and Cash Collector. Can also create users and assign roles.  
+2. **Manager** – Can define tasks, create receipt books, set receipt ranges, assign tasks to receipt books, add expenses, verify calculations, publish reports publicly, and backup data.  
+3. **Cash Collector** – Can only enter receipts assigned to them (within their receipt book number and range).  
+
+**Workflow:**  
+- The **Manager** creates a “Task” (e.g., Construction, Charity, etc.).  
+- The **Manager** creates a **Receipt Book** with:  
+  - **Manually assigned Book Number** (chosen by the Manager, must be unique).  
+  - Task it is assigned to.  
+  - Starting and Ending receipt numbers.  
+  - Total number of receipts in the book.  
+- The Manager assigns the Receipt Book to a **Cash Collector**.  
+- **Cash Collector** enters data for each receipt:  
+  - Receipt Number (auto-filled in sequence within book range).  
+  - Giver Name (Mandatory).  
+  - Address / House Number (Mandatory).  
+  - Phone Number (Optional).  
+  - Amount (Mandatory).  
+- The system should track each receipt as part of its book and task.  
+
+**Expenses Module:**  
+- Manager can add different expense types dynamically (e.g., Electricity Bill, Salary, Maintenance).  
+- Expenses should have:  
+  - Date.  
+  - Type.  
+  - Amount.  
+  - Notes (optional).  
+
+**Calculations & Reporting:**  
+- The system should calculate:  
+  - Total Income (sum of all receipts).  
+  - Total Expenses (sum of all expenses).  
+  - Current Balance (Income – Expenses).  
+- Manager can review all data and **publish** it.  
+- Once published, it should be visible on a **Public Page** showing:  
+  - All tasks with their income from each receipt book.  
+  - All expenses with type and amount.  
+  - Total Income, Total Expenses, and Current Balance.  
+
+**Data Backup Feature:**  
+- Admin and Manager should have an option to **download a full backup** of all system data locally to their device.  
+- Backup format should be **MySQL database export (.sql)** or **CSV for each table** in a ZIP file.  
+- Backup button should be available in their dashboard.  
+
+**Other Requirements:**  
+- Use PHP and MySQL.  
+- Secure login for Admin, Manager, and Cash Collector.  
+- Role-based access control.  
+- Responsive, simple Bootstrap-based UI.  
+- Public page should be read-only and accessible without login.  
+- All IDs (Tasks, Receipt Books, Receipts) must be unique and properly linked in the database.  
+
+Build the project fully functional with proper database schema, PHP scripts, and front-end pages.

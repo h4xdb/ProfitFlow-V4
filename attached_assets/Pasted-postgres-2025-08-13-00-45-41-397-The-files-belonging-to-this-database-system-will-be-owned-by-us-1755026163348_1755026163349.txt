@@ -1,0 +1,191 @@
+postgres | 2025-08-13 00:45:41.397 | The files belonging to this database system will be owned by user "postgres".
+postgres | 2025-08-13 00:45:41.397 | This user must also own the server process.
+postgres | 2025-08-13 00:45:41.397 | 
+postgres | 2025-08-13 00:45:41.397 | The database cluster will be initialized with locale "en_US.utf8".
+postgres | 2025-08-13 00:45:41.397 | The default database encoding has accordingly been set to "UTF8".
+postgres | 2025-08-13 00:45:41.397 | The default text search configuration will be set to "english".
+postgres | 2025-08-13 00:45:41.397 | 
+postgres | 2025-08-13 00:45:41.397 | Data page checksums are disabled.
+postgres | 2025-08-13 00:45:41.397 | 
+postgres | 2025-08-13 00:45:41.398 | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+postgres | 2025-08-13 00:45:41.418 | creating subdirectories ... ok
+postgres | 2025-08-13 00:45:41.418 | selecting dynamic shared memory implementation ... posix
+postgres | 2025-08-13 00:45:41.494 | selecting default max_connections ... 100
+postgres | 2025-08-13 00:45:41.536 | selecting default shared_buffers ... 128MB
+postgres | 2025-08-13 00:45:41.626 | selecting default time zone ... UTC
+postgres | 2025-08-13 00:45:41.631 | creating configuration files ... ok
+postgres | 2025-08-13 00:45:42.037 | running bootstrap script ... ok
+postgres | 2025-08-13 00:45:42.563 | sh: locale: not found
+postgres | 2025-08-13 00:45:42.563 | 2025-08-12 19:15:42.563 UTC [35] WARNING:  no usable system locales were found
+app      | 2025-08-13 00:45:43.113 | 
+app      | 2025-08-13 00:45:43.113 | > rest-express@1.0.0 start
+app      | 2025-08-13 00:45:43.113 | > NODE_ENV=production node dist/index.js
+app      | 2025-08-13 00:45:43.113 | 
+app      | 2025-08-13 00:45:43.569 | node:internal/errors:496
+app      | 2025-08-13 00:45:43.569 |     ErrorCaptureStackTrace(err);
+app      | 2025-08-13 00:45:43.569 |     ^
+app      | 2025-08-13 00:45:43.569 | 
+app      | 2025-08-13 00:45:43.569 | Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from /app/dist/index.js
+app      | 2025-08-13 00:45:43.569 |     at new NodeError (node:internal/errors:405:5)
+app      | 2025-08-13 00:45:43.569 |     at packageResolve (node:internal/modules/esm/resolve:916:9)
+app      | 2025-08-13 00:45:43.569 |     at moduleResolve (node:internal/modules/esm/resolve:973:20)
+app      | 2025-08-13 00:45:43.569 |     at defaultResolve (node:internal/modules/esm/resolve:1206:11)
+app      | 2025-08-13 00:45:43.569 |     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:404:12)
+app      | 2025-08-13 00:45:43.569 |     at ModuleLoader.resolve (node:internal/modules/esm/loader:373:25)
+app      | 2025-08-13 00:45:43.569 |     at ModuleLoader.getModuleJob (node:internal/modules/esm/loader:250:38)
+app      | 2025-08-13 00:45:43.569 |     at ModuleWrap.<anonymous> (node:internal/modules/esm/module_job:76:39)
+app      | 2025-08-13 00:45:43.569 |     at link (node:internal/modules/esm/module_job:75:36) {
+app      | 2025-08-13 00:45:43.569 |   code: 'ERR_MODULE_NOT_FOUND'
+app      | 2025-08-13 00:45:43.569 | }
+app      | 2025-08-13 00:45:43.570 | 
+app      | 2025-08-13 00:45:43.570 | Node.js v18.20.8
+postgres | 2025-08-13 00:45:44.688 | performing post-bootstrap initialization ... ok
+postgres | 2025-08-13 00:45:45.574 | initdb: warning: enabling "trust" authentication for local connections
+postgres | 2025-08-13 00:45:45.574 | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+postgres | 2025-08-13 00:45:45.574 | syncing data to disk ... ok
+postgres | 2025-08-13 00:45:45.574 | 
+postgres | 2025-08-13 00:45:45.574 | 
+postgres | 2025-08-13 00:45:45.574 | Success. You can now start the database server using:
+postgres | 2025-08-13 00:45:45.574 | 
+postgres | 2025-08-13 00:45:45.574 |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+postgres | 2025-08-13 00:45:45.574 | 
+app      | 2025-08-13 00:45:45.614 | 
+app      | 2025-08-13 00:45:45.614 | > rest-express@1.0.0 start
+app      | 2025-08-13 00:45:45.614 | > NODE_ENV=production node dist/index.js
+app      | 2025-08-13 00:45:45.614 | 
+postgres | 2025-08-13 00:45:45.700 | waiting for server to start....2025-08-12 19:15:45.700 UTC [41] LOG:  starting PostgreSQL 15.13 on x86_64-pc-linux-musl, compiled by gcc (Alpine 14.2.0) 14.2.0, 64-bit
+postgres | 2025-08-13 00:45:45.706 | 2025-08-12 19:15:45.705 UTC [41] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres | 2025-08-13 00:45:45.735 | 2025-08-12 19:15:45.735 UTC [44] LOG:  database system was shut down at 2025-08-12 19:15:44 UTC
+postgres | 2025-08-13 00:45:45.751 | 2025-08-12 19:15:45.751 UTC [41] LOG:  database system is ready to accept connections
+app      | 2025-08-13 00:45:45.796 | node:internal/errors:496
+app      | 2025-08-13 00:45:45.796 |     ErrorCaptureStackTrace(err);
+app      | 2025-08-13 00:45:45.796 |     ^
+app      | 2025-08-13 00:45:45.796 | 
+app      | 2025-08-13 00:45:45.796 | Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from /app/dist/index.js
+app      | 2025-08-13 00:45:45.796 |     at new NodeError (node:internal/errors:405:5)
+app      | 2025-08-13 00:45:45.796 |     at packageResolve (node:internal/modules/esm/resolve:916:9)
+app      | 2025-08-13 00:45:45.796 |     at moduleResolve (node:internal/modules/esm/resolve:973:20)
+app      | 2025-08-13 00:45:45.796 |     at defaultResolve (node:internal/modules/esm/resolve:1206:11)
+app      | 2025-08-13 00:45:45.796 |     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:404:12)
+app      | 2025-08-13 00:45:45.796 |     at ModuleLoader.resolve (node:internal/modules/esm/loader:373:25)
+app      | 2025-08-13 00:45:45.796 |     at ModuleLoader.getModuleJob (node:internal/modules/esm/loader:250:38)
+app      | 2025-08-13 00:45:45.796 |     at ModuleWrap.<anonymous> (node:internal/modules/esm/module_job:76:39)
+app      | 2025-08-13 00:45:45.796 |     at link (node:internal/modules/esm/module_job:75:36) {
+app      | 2025-08-13 00:45:45.796 |   code: 'ERR_MODULE_NOT_FOUND'
+app      | 2025-08-13 00:45:45.796 | }
+app      | 2025-08-13 00:45:45.796 | 
+app      | 2025-08-13 00:45:45.796 | Node.js v18.20.8
+postgres | 2025-08-13 00:45:45.843 |  done
+postgres | 2025-08-13 00:45:45.843 | server started
+postgres | 2025-08-13 00:45:46.007 | CREATE DATABASE
+postgres | 2025-08-13 00:45:46.008 | 
+postgres | 2025-08-13 00:45:46.011 | 
+postgres | 2025-08-13 00:45:46.011 | /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/01-create-default-users.sql
+postgres | 2025-08-13 00:45:46.054 | 
+postgres | 2025-08-13 00:45:46.054 | 
+postgres | 2025-08-13 00:45:46.056 | waiting for server to shut down...2025-08-12 19:15:46.056 UTC [41] LOG:  received fast shutdown request
+postgres | 2025-08-13 00:45:46.068 | .2025-08-12 19:15:46.067 UTC [41] LOG:  aborting any active transactions
+postgres | 2025-08-13 00:45:46.083 | 2025-08-12 19:15:46.075 UTC [41] LOG:  background worker "logical replication launcher" (PID 47) exited with exit code 1
+postgres | 2025-08-13 00:45:46.083 | 2025-08-12 19:15:46.083 UTC [42] LOG:  shutting down
+postgres | 2025-08-13 00:45:46.087 | 2025-08-12 19:15:46.086 UTC [42] LOG:  checkpoint starting: shutdown immediate
+postgres | 2025-08-13 00:45:46.616 | 2025-08-12 19:15:46.615 UTC [42] LOG:  checkpoint complete: wrote 921 buffers (5.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.137 s, sync=0.372 s, total=0.533 s; sync files=301, longest=0.074 s, average=0.002 s; distance=4239 kB, estimate=4239 kB
+postgres | 2025-08-13 00:45:46.629 | 2025-08-12 19:15:46.629 UTC [41] LOG:  database system is shut down
+postgres | 2025-08-13 00:45:46.689 |  done
+postgres | 2025-08-13 00:45:46.689 | server stopped
+postgres | 2025-08-13 00:45:46.693 | 
+postgres | 2025-08-13 00:45:46.693 | PostgreSQL init process complete; ready for start up.
+postgres | 2025-08-13 00:45:46.693 | 
+postgres | 2025-08-13 00:45:46.793 | 2025-08-12 19:15:46.792 UTC [1] LOG:  starting PostgreSQL 15.13 on x86_64-pc-linux-musl, compiled by gcc (Alpine 14.2.0) 14.2.0, 64-bit
+postgres | 2025-08-13 00:45:46.793 | 2025-08-12 19:15:46.792 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres | 2025-08-13 00:45:46.793 | 2025-08-12 19:15:46.792 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres | 2025-08-13 00:45:46.806 | 2025-08-12 19:15:46.805 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres | 2025-08-13 00:45:46.823 | 2025-08-12 19:15:46.823 UTC [59] LOG:  database system was shut down at 2025-08-12 19:15:46 UTC
+postgres | 2025-08-13 00:45:46.837 | 2025-08-12 19:15:46.837 UTC [1] LOG:  database system is ready to accept connections
+app      | 2025-08-13 00:45:47.208 | 
+app      | 2025-08-13 00:45:47.208 | > rest-express@1.0.0 start
+app      | 2025-08-13 00:45:47.208 | > NODE_ENV=production node dist/index.js
+app      | 2025-08-13 00:45:47.208 | 
+app      | 2025-08-13 00:45:47.431 | node:internal/errors:496
+app      | 2025-08-13 00:45:47.431 |     ErrorCaptureStackTrace(err);
+app      | 2025-08-13 00:45:47.431 |     ^
+app      | 2025-08-13 00:45:47.431 | 
+app      | 2025-08-13 00:45:47.431 | Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from /app/dist/index.js
+app      | 2025-08-13 00:45:47.431 |     at new NodeError (node:internal/errors:405:5)
+app      | 2025-08-13 00:45:47.431 |     at packageResolve (node:internal/modules/esm/resolve:916:9)
+app      | 2025-08-13 00:45:47.431 |     at moduleResolve (node:internal/modules/esm/resolve:973:20)
+app      | 2025-08-13 00:45:47.431 |     at defaultResolve (node:internal/modules/esm/resolve:1206:11)
+app      | 2025-08-13 00:45:47.431 |     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:404:12)
+app      | 2025-08-13 00:45:47.431 |     at ModuleLoader.resolve (node:internal/modules/esm/loader:373:25)
+app      | 2025-08-13 00:45:47.431 |     at ModuleLoader.getModuleJob (node:internal/modules/esm/loader:250:38)
+app      | 2025-08-13 00:45:47.431 |     at ModuleWrap.<anonymous> (node:internal/modules/esm/module_job:76:39)
+app      | 2025-08-13 00:45:47.431 |     at link (node:internal/modules/esm/module_job:75:36) {
+app      | 2025-08-13 00:45:47.431 |   code: 'ERR_MODULE_NOT_FOUND'
+app      | 2025-08-13 00:45:47.431 | }
+app      | 2025-08-13 00:45:47.431 | 
+app      | 2025-08-13 00:45:47.431 | Node.js v18.20.8
+app      | 2025-08-13 00:45:48.787 | 
+app      | 2025-08-13 00:45:48.787 | > rest-express@1.0.0 start
+app      | 2025-08-13 00:45:48.787 | > NODE_ENV=production node dist/index.js
+app      | 2025-08-13 00:45:48.787 | 
+app      | 2025-08-13 00:45:49.002 | node:internal/errors:496
+app      | 2025-08-13 00:45:49.003 |     ErrorCaptureStackTrace(err);
+app      | 2025-08-13 00:45:49.003 |     ^
+app      | 2025-08-13 00:45:49.003 | 
+app      | 2025-08-13 00:45:49.003 | Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from /app/dist/index.js
+app      | 2025-08-13 00:45:49.003 |     at new NodeError (node:internal/errors:405:5)
+app      | 2025-08-13 00:45:49.003 |     at packageResolve (node:internal/modules/esm/resolve:916:9)
+app      | 2025-08-13 00:45:49.003 |     at moduleResolve (node:internal/modules/esm/resolve:973:20)
+app      | 2025-08-13 00:45:49.003 |     at defaultResolve (node:internal/modules/esm/resolve:1206:11)
+app      | 2025-08-13 00:45:49.003 |     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:404:12)
+app      | 2025-08-13 00:45:49.003 |     at ModuleLoader.resolve (node:internal/modules/esm/loader:373:25)
+app      | 2025-08-13 00:45:49.003 |     at ModuleLoader.getModuleJob (node:internal/modules/esm/loader:250:38)
+app      | 2025-08-13 00:45:49.003 |     at ModuleWrap.<anonymous> (node:internal/modules/esm/module_job:76:39)
+app      | 2025-08-13 00:45:49.003 |     at link (node:internal/modules/esm/module_job:75:36) {
+app      | 2025-08-13 00:45:49.003 |   code: 'ERR_MODULE_NOT_FOUND'
+app      | 2025-08-13 00:45:49.003 | }
+app      | 2025-08-13 00:45:49.003 | 
+app      | 2025-08-13 00:45:49.003 | Node.js v18.20.8
+app      | 2025-08-13 00:45:50.857 | 
+app      | 2025-08-13 00:45:50.858 | > rest-express@1.0.0 start
+app      | 2025-08-13 00:45:50.858 | > NODE_ENV=production node dist/index.js
+app      | 2025-08-13 00:45:50.858 | 
+app      | 2025-08-13 00:45:51.042 | node:internal/errors:496
+app      | 2025-08-13 00:45:51.042 |     ErrorCaptureStackTrace(err);
+app      | 2025-08-13 00:45:51.042 |     ^
+app      | 2025-08-13 00:45:51.042 | 
+app      | 2025-08-13 00:45:51.042 | Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from /app/dist/index.js
+app      | 2025-08-13 00:45:51.042 |     at new NodeError (node:internal/errors:405:5)
+app      | 2025-08-13 00:45:51.042 |     at packageResolve (node:internal/modules/esm/resolve:916:9)
+app      | 2025-08-13 00:45:51.042 |     at moduleResolve (node:internal/modules/esm/resolve:973:20)
+app      | 2025-08-13 00:45:51.043 |     at defaultResolve (node:internal/modules/esm/resolve:1206:11)
+app      | 2025-08-13 00:45:51.043 |     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:404:12)
+app      | 2025-08-13 00:45:51.043 |     at ModuleLoader.resolve (node:internal/modules/esm/loader:373:25)
+app      | 2025-08-13 00:45:51.043 |     at ModuleLoader.getModuleJob (node:internal/modules/esm/loader:250:38)
+app      | 2025-08-13 00:45:51.043 |     at ModuleWrap.<anonymous> (node:internal/modules/esm/module_job:76:39)
+app      | 2025-08-13 00:45:51.043 |     at link (node:internal/modules/esm/module_job:75:36) {
+app      | 2025-08-13 00:45:51.043 |   code: 'ERR_MODULE_NOT_FOUND'
+app      | 2025-08-13 00:45:51.043 | }
+app      | 2025-08-13 00:45:51.043 | 
+app      | 2025-08-13 00:45:51.043 | Node.js v18.20.8
+app      | 2025-08-13 00:45:53.687 | 
+app      | 2025-08-13 00:45:53.687 | > rest-express@1.0.0 start
+app      | 2025-08-13 00:45:53.687 | > NODE_ENV=production node dist/index.js
+app      | 2025-08-13 00:45:53.687 | 
+app      | 2025-08-13 00:45:53.916 | node:internal/errors:496
+app      | 2025-08-13 00:45:53.916 |     ErrorCaptureStackTrace(err);
+app      | 2025-08-13 00:45:53.916 |     ^
+app      | 2025-08-13 00:45:53.916 | 
+app      | 2025-08-13 00:45:53.916 | Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from /app/dist/index.js
+app      | 2025-08-13 00:45:53.916 |     at new NodeError (node:internal/errors:405:5)
+app      | 2025-08-13 00:45:53.916 |     at packageResolve (node:internal/modules/esm/resolve:916:9)
+app      | 2025-08-13 00:45:53.916 |     at moduleResolve (node:internal/modules/esm/resolve:973:20)
+app      | 2025-08-13 00:45:53.916 |     at defaultResolve (node:internal/modules/esm/resolve:1206:11)
+app      | 2025-08-13 00:45:53.916 |     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:404:12)
+app      | 2025-08-13 00:45:53.916 |     at ModuleLoader.resolve (node:internal/modules/esm/loader:373:25)
+app      | 2025-08-13 00:45:53.916 |     at ModuleLoader.getModuleJob (node:internal/modules/esm/loader:250:38)
+app      | 2025-08-13 00:45:53.916 |     at ModuleWrap.<anonymous> (node:internal/modules/esm/module_job:76:39)
+app      | 2025-08-13 00:45:53.916 |     at link (node:internal/modules/esm/module_job:75:36) {
+app      | 2025-08-13 00:45:53.916 |   code: 'ERR_MODULE_NOT_FOUND'
+app      | 2025-08-13 00:45:53.916 | }
+app      | 2025-08-13 00:45:53.916 | 
+app      | 2025-08-13 00:45:53.916 | Node.js v18.20.8

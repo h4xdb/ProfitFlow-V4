@@ -1,0 +1,121 @@
+postgres | 2025-08-13 00:54:40.847 | 
+postgres | 2025-08-13 00:54:40.848 | PostgreSQL Database directory appears to contain a database; Skipping initialization
+postgres | 2025-08-13 00:54:40.848 | 
+postgres | 2025-08-13 00:54:40.947 | 2025-08-12 19:24:40.947 UTC [1] LOG:  starting PostgreSQL 15.13 on x86_64-pc-linux-musl, compiled by gcc (Alpine 14.2.0) 14.2.0, 64-bit
+postgres | 2025-08-13 00:54:40.947 | 2025-08-12 19:24:40.947 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres | 2025-08-13 00:54:40.948 | 2025-08-12 19:24:40.947 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres | 2025-08-13 00:54:40.955 | 2025-08-12 19:24:40.955 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres | 2025-08-13 00:54:40.980 | 2025-08-12 19:24:40.980 UTC [28] LOG:  database system was shut down at 2025-08-12 19:19:14 UTC
+postgres | 2025-08-13 00:54:41.031 | 2025-08-12 19:24:41.031 UTC [1] LOG:  database system is ready to accept connections
+app      | 2025-08-13 00:54:42.369 | node:internal/errors:496
+app      | 2025-08-13 00:54:42.369 |     ErrorCaptureStackTrace(err);
+app      | 2025-08-13 00:54:42.369 |     ^
+app      | 2025-08-13 00:54:42.369 | 
+app      | 2025-08-13 00:54:42.369 | TypeError [ERR_INVALID_ARG_TYPE]: The "paths[0]" argument must be of type string. Received undefined
+app      | 2025-08-13 00:54:42.369 |     at new NodeError (node:internal/errors:405:5)
+app      | 2025-08-13 00:54:42.369 |     at validateString (node:internal/validators:162:11)
+app      | 2025-08-13 00:54:42.369 |     at Object.resolve (node:path:1115:7)
+app      | 2025-08-13 00:54:42.369 |     at serveStatic (file:///app/dist/production.js:1008:25)
+app      | 2025-08-13 00:54:42.369 |     at file:///app/dist/production.js:1054:3 {
+app      | 2025-08-13 00:54:42.369 |   code: 'ERR_INVALID_ARG_TYPE'
+app      | 2025-08-13 00:54:42.369 | }
+app      | 2025-08-13 00:54:42.369 | 
+app      | 2025-08-13 00:54:42.369 | Node.js v18.20.8
+app      | 2025-08-13 00:54:43.769 | node:internal/errors:496
+app      | 2025-08-13 00:54:43.769 |     ErrorCaptureStackTrace(err);
+app      | 2025-08-13 00:54:43.769 |     ^
+app      | 2025-08-13 00:54:43.769 | 
+app      | 2025-08-13 00:54:43.769 | TypeError [ERR_INVALID_ARG_TYPE]: The "paths[0]" argument must be of type string. Received undefined
+app      | 2025-08-13 00:54:43.769 |     at new NodeError (node:internal/errors:405:5)
+app      | 2025-08-13 00:54:43.769 |     at validateString (node:internal/validators:162:11)
+app      | 2025-08-13 00:54:43.769 |     at Object.resolve (node:path:1115:7)
+app      | 2025-08-13 00:54:43.769 |     at serveStatic (file:///app/dist/production.js:1008:25)
+app      | 2025-08-13 00:54:43.770 |     at file:///app/dist/production.js:1054:3 {
+app      | 2025-08-13 00:54:43.770 |   code: 'ERR_INVALID_ARG_TYPE'
+app      | 2025-08-13 00:54:43.770 | }
+app      | 2025-08-13 00:54:43.770 | 
+app      | 2025-08-13 00:54:43.770 | Node.js v18.20.8
+app      | 2025-08-13 00:54:45.161 | node:internal/errors:496
+app      | 2025-08-13 00:54:45.161 |     ErrorCaptureStackTrace(err);
+app      | 2025-08-13 00:54:45.161 |     ^
+app      | 2025-08-13 00:54:45.161 | 
+app      | 2025-08-13 00:54:45.161 | TypeError [ERR_INVALID_ARG_TYPE]: The "paths[0]" argument must be of type string. Received undefined
+app      | 2025-08-13 00:54:45.161 |     at new NodeError (node:internal/errors:405:5)
+app      | 2025-08-13 00:54:45.161 |     at validateString (node:internal/validators:162:11)
+app      | 2025-08-13 00:54:45.161 |     at Object.resolve (node:path:1115:7)
+app      | 2025-08-13 00:54:45.161 |     at serveStatic (file:///app/dist/production.js:1008:25)
+app      | 2025-08-13 00:54:45.161 |     at file:///app/dist/production.js:1054:3 {
+app      | 2025-08-13 00:54:45.161 |   code: 'ERR_INVALID_ARG_TYPE'
+app      | 2025-08-13 00:54:45.161 | }
+app      | 2025-08-13 00:54:45.161 | 
+app      | 2025-08-13 00:54:45.161 | Node.js v18.20.8
+app      | 2025-08-13 00:54:46.629 | node:internal/errors:496
+app      | 2025-08-13 00:54:46.629 |     ErrorCaptureStackTrace(err);
+app      | 2025-08-13 00:54:46.629 |     ^
+app      | 2025-08-13 00:54:46.629 | 
+app      | 2025-08-13 00:54:46.629 | TypeError [ERR_INVALID_ARG_TYPE]: The "paths[0]" argument must be of type string. Received undefined
+app      | 2025-08-13 00:54:46.629 |     at new NodeError (node:internal/errors:405:5)
+app      | 2025-08-13 00:54:46.629 |     at validateString (node:internal/validators:162:11)
+app      | 2025-08-13 00:54:46.629 |     at Object.resolve (node:path:1115:7)
+app      | 2025-08-13 00:54:46.629 |     at serveStatic (file:///app/dist/production.js:1008:25)
+app      | 2025-08-13 00:54:46.629 |     at file:///app/dist/production.js:1054:3 {
+app      | 2025-08-13 00:54:46.629 |   code: 'ERR_INVALID_ARG_TYPE'
+app      | 2025-08-13 00:54:46.629 | }
+app      | 2025-08-13 00:54:46.629 | 
+app      | 2025-08-13 00:54:46.629 | Node.js v18.20.8
+app      | 2025-08-13 00:54:48.510 | node:internal/errors:496
+app      | 2025-08-13 00:54:48.510 |     ErrorCaptureStackTrace(err);
+app      | 2025-08-13 00:54:48.510 |     ^
+app      | 2025-08-13 00:54:48.510 | 
+app      | 2025-08-13 00:54:48.510 | TypeError [ERR_INVALID_ARG_TYPE]: The "paths[0]" argument must be of type string. Received undefined
+app      | 2025-08-13 00:54:48.510 |     at new NodeError (node:internal/errors:405:5)
+app      | 2025-08-13 00:54:48.510 |     at validateString (node:internal/validators:162:11)
+app      | 2025-08-13 00:54:48.510 |     at Object.resolve (node:path:1115:7)
+app      | 2025-08-13 00:54:48.510 |     at serveStatic (file:///app/dist/production.js:1008:25)
+app      | 2025-08-13 00:54:48.510 |     at file:///app/dist/production.js:1054:3 {
+app      | 2025-08-13 00:54:48.510 |   code: 'ERR_INVALID_ARG_TYPE'
+app      | 2025-08-13 00:54:48.510 | }
+app      | 2025-08-13 00:54:48.510 | 
+app      | 2025-08-13 00:54:48.510 | Node.js v18.20.8
+app      | 2025-08-13 00:54:51.557 | node:internal/errors:496
+app      | 2025-08-13 00:54:51.557 |     ErrorCaptureStackTrace(err);
+app      | 2025-08-13 00:54:51.557 |     ^
+app      | 2025-08-13 00:54:51.557 | 
+app      | 2025-08-13 00:54:51.557 | TypeError [ERR_INVALID_ARG_TYPE]: The "paths[0]" argument must be of type string. Received undefined
+app      | 2025-08-13 00:54:51.557 |     at new NodeError (node:internal/errors:405:5)
+app      | 2025-08-13 00:54:51.557 |     at validateString (node:internal/validators:162:11)
+app      | 2025-08-13 00:54:51.557 |     at Object.resolve (node:path:1115:7)
+app      | 2025-08-13 00:54:51.557 |     at serveStatic (file:///app/dist/production.js:1008:25)
+app      | 2025-08-13 00:54:51.557 |     at file:///app/dist/production.js:1054:3 {
+app      | 2025-08-13 00:54:51.557 |   code: 'ERR_INVALID_ARG_TYPE'
+app      | 2025-08-13 00:54:51.557 | }
+app      | 2025-08-13 00:54:51.557 | 
+app      | 2025-08-13 00:54:51.557 | Node.js v18.20.8
+app      | 2025-08-13 00:54:55.910 | node:internal/errors:496
+app      | 2025-08-13 00:54:55.910 |     ErrorCaptureStackTrace(err);
+app      | 2025-08-13 00:54:55.910 |     ^
+app      | 2025-08-13 00:54:55.910 | 
+app      | 2025-08-13 00:54:55.910 | TypeError [ERR_INVALID_ARG_TYPE]: The "paths[0]" argument must be of type string. Received undefined
+app      | 2025-08-13 00:54:55.910 |     at new NodeError (node:internal/errors:405:5)
+app      | 2025-08-13 00:54:55.910 |     at validateString (node:internal/validators:162:11)
+app      | 2025-08-13 00:54:55.910 |     at Object.resolve (node:path:1115:7)
+app      | 2025-08-13 00:54:55.910 |     at serveStatic (file:///app/dist/production.js:1008:25)
+app      | 2025-08-13 00:54:55.910 |     at file:///app/dist/production.js:1054:3 {
+app      | 2025-08-13 00:54:55.910 |   code: 'ERR_INVALID_ARG_TYPE'
+app      | 2025-08-13 00:54:55.910 | }
+app      | 2025-08-13 00:54:55.910 | 
+app      | 2025-08-13 00:54:55.910 | Node.js v18.20.8
+app      | 2025-08-13 00:55:03.763 | node:internal/errors:496
+app      | 2025-08-13 00:55:03.763 |     ErrorCaptureStackTrace(err);
+app      | 2025-08-13 00:55:03.763 |     ^
+app      | 2025-08-13 00:55:03.763 | 
+app      | 2025-08-13 00:55:03.763 | TypeError [ERR_INVALID_ARG_TYPE]: The "paths[0]" argument must be of type string. Received undefined
+app      | 2025-08-13 00:55:03.763 |     at new NodeError (node:internal/errors:405:5)
+app      | 2025-08-13 00:55:03.763 |     at validateString (node:internal/validators:162:11)
+app      | 2025-08-13 00:55:03.763 |     at Object.resolve (node:path:1115:7)
+app      | 2025-08-13 00:55:03.763 |     at serveStatic (file:///app/dist/production.js:1008:25)
+app      | 2025-08-13 00:55:03.763 |     at file:///app/dist/production.js:1054:3 {
+app      | 2025-08-13 00:55:03.763 |   code: 'ERR_INVALID_ARG_TYPE'
+app      | 2025-08-13 00:55:03.763 | }
+app      | 2025-08-13 00:55:03.763 | 
+app      | 2025-08-13 00:55:03.763 | Node.js v18.20.8

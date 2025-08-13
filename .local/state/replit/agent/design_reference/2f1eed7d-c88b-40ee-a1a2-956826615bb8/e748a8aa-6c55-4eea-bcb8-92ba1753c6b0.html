@@ -1,0 +1,614 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masjid ERP - Financial Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8'
+                        },
+                        islamic: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-gray-50 font-inter">
+    <!-- @COMPONENT: AppContainer [main application wrapper] -->
+    <div class="min-h-screen flex">
+        <!-- @COMPONENT: Sidebar [role-based navigation] -->
+        <div class="w-64 bg-white shadow-lg flex-shrink-0">
+            <!-- @COMPONENT: Logo [organization branding] -->
+            <div class="p-6 border-b border-gray-200">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-islamic-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-mosque text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-gray-900">Masjid ERP</h1>
+                        <p class="text-xs text-gray-500">Financial Management</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- @COMPONENT: UserProfile [current user info] -->
+            <div class="p-4 border-b border-gray-200 bg-gray-50">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-primary-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-gray-900" data-bind="user.name">Ahmed Hassan</p>
+                        <p class="text-xs text-primary-600 bg-primary-100 px-2 py-1 rounded-full inline-block" data-bind="user.role">Manager</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- @COMPONENT: Navigation [role-based menu] -->
+            <nav class="p-4 space-y-2">
+                <!-- @STATE: activeMenu:string = 'dashboard' -->
+                <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg bg-primary-100 text-primary-700 font-medium">
+                    <i class="fas fa-chart-line w-5"></i>
+                    <span>Dashboard</span>
+                </a>
+                
+                <div class="pt-2">
+                    <p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">Income Management</p>
+                    <div class="mt-2 space-y-1">
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors">
+                            <i class="fas fa-tasks w-5"></i>
+                            <span>Tasks</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors">
+                            <i class="fas fa-book w-5"></i>
+                            <span>Receipt Books</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors">
+                            <i class="fas fa-receipt w-5"></i>
+                            <span>Receipts</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">Expense Management</p>
+                    <div class="mt-2 space-y-1">
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors">
+                            <i class="fas fa-credit-card w-5"></i>
+                            <span>Expenses</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors">
+                            <i class="fas fa-tags w-5"></i>
+                            <span>Expense Types</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">Reporting</p>
+                    <div class="mt-2 space-y-1">
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors">
+                            <i class="fas fa-chart-pie w-5"></i>
+                            <span>Financial Reports</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors">
+                            <i class="fas fa-globe w-5"></i>
+                            <span>Public Reports</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">System</p>
+                    <div class="mt-2 space-y-1">
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors">
+                            <i class="fas fa-users w-5"></i>
+                            <span>User Management</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors">
+                            <i class="fas fa-download w-5"></i>
+                            <span>Data Backup</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- @COMPONENT: LogoutButton [session management] -->
+            <div class="absolute bottom-4 left-4 right-4">
+                <button class="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors" data-event="click:handleLogout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+        <!-- @END_COMPONENT: Sidebar -->
+
+        <!-- @COMPONENT: MainContent [primary application area] -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- @COMPONENT: Header [page title and actions] -->
+            <header class="bg-white shadow-sm border-b border-gray-200 px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900">Dashboard</h1>
+                        <p class="text-gray-500 text-sm">Financial overview and recent activities</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button class="px-4 py-2 bg-islamic-600 text-white rounded-lg hover:bg-islamic-700 transition-colors flex items-center space-x-2" data-event="click:publishReports" data-implementation="Should trigger report publishing workflow">
+                            <i class="fas fa-upload"></i>
+                            <span>Publish Reports</span>
+                        </button>
+                        <button class="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors flex items-center space-x-2" data-event="click:showBackupModal" data-implementation="Should open backup options modal">
+                            <i class="fas fa-download"></i>
+                            <span>Backup Data</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+            <!-- @END_COMPONENT: Header -->
+
+            <!-- @COMPONENT: DashboardContent [main dashboard area] -->
+            <main class="flex-1 overflow-auto p-6 space-y-6">
+                <!-- @COMPONENT: FinancialSummaryCards [key metrics] -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">Total Income</p>
+                                <p class="text-3xl font-bold text-islamic-600" data-bind="financials.totalIncome">$45,250</p>
+                                <p class="text-sm text-green-600 flex items-center mt-1">
+                                    <i class="fas fa-arrow-up text-xs mr-1"></i>
+                                    12% from last month
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 bg-islamic-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-hand-holding-usd text-islamic-600 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">Total Expenses</p>
+                                <p class="text-3xl font-bold text-red-600" data-bind="financials.totalExpenses">$18,400</p>
+                                <p class="text-sm text-red-600 flex items-center mt-1">
+                                    <i class="fas fa-arrow-up text-xs mr-1"></i>
+                                    8% from last month
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-credit-card text-red-600 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">Current Balance</p>
+                                <p class="text-3xl font-bold text-primary-600" data-bind="financials.currentBalance">$26,850</p>
+                                <p class="text-sm text-green-600 flex items-center mt-1">
+                                    <i class="fas fa-arrow-up text-xs mr-1"></i>
+                                    Healthy position
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-wallet text-primary-600 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">Active Tasks</p>
+                                <p class="text-3xl font-bold text-gray-900" data-bind="tasks.activeCount">8</p>
+                                <p class="text-sm text-blue-600 flex items-center mt-1">
+                                    <i class="fas fa-tasks text-xs mr-1"></i>
+                                    5 published
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-tasks text-blue-600 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- @END_COMPONENT: FinancialSummaryCards -->
+
+                <!-- @COMPONENT: MainDashboardGrid [content areas] -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- @COMPONENT: RecentActivities [activity feed] -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200">
+                        <div class="px-6 py-4 border-b border-gray-200">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-lg font-semibold text-gray-900">Recent Activities</h3>
+                                <a href="#" class="text-sm text-primary-600 hover:text-primary-700">View All</a>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <!-- @MAP: activities.map(activity => ( -->
+                            <div class="flex items-start space-x-3" data-mock="true">
+                                <div class="w-8 h-8 bg-islamic-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-receipt text-islamic-600 text-sm"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm text-gray-900">New receipt #1001 added by <span class="font-medium">Ali Ahmed</span></p>
+                                    <p class="text-sm text-gray-500">Charity Collection - $150</p>
+                                    <p class="text-xs text-gray-400">2 minutes ago</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3" data-mock="true">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-credit-card text-red-600 text-sm"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm text-gray-900">Expense added: <span class="font-medium">Electricity Bill</span></p>
+                                    <p class="text-sm text-gray-500">-$280</p>
+                                    <p class="text-xs text-gray-400">1 hour ago</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3" data-mock="true">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-book text-blue-600 text-sm"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm text-gray-900">Receipt Book #RB-001 assigned to <span class="font-medium">Collector 3</span></p>
+                                    <p class="text-sm text-gray-500">Construction Task - 50 receipts</p>
+                                    <p class="text-xs text-gray-400">3 hours ago</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3" data-mock="true">
+                                <div class="w-8 h-8 bg-islamic-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-globe text-islamic-600 text-sm"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm text-gray-900">Reports published to <span class="font-medium">Public Page</span></p>
+                                    <p class="text-sm text-gray-500">Monthly financial summary</p>
+                                    <p class="text-xs text-gray-400">1 day ago</p>
+                                </div>
+                            </div>
+                            <!-- @END_MAP )) -->
+                        </div>
+                    </div>
+                    <!-- @END_COMPONENT: RecentActivities -->
+
+                    <!-- @COMPONENT: TaskSummary [task overview] -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200">
+                        <div class="px-6 py-4 border-b border-gray-200">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-lg font-semibold text-gray-900">Task Overview</h3>
+                                <button class="text-sm text-primary-600 hover:text-primary-700 flex items-center space-x-1" data-event="click:createNewTask">
+                                    <i class="fas fa-plus"></i>
+                                    <span>New Task</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <!-- @MAP: tasks.map(task => ( -->
+                            <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg" data-mock="true">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-islamic-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-hammer text-islamic-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">Construction</p>
+                                        <p class="text-sm text-gray-500">3 receipt books • $12,450</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">Active</span>
+                                    <button class="text-gray-400 hover:text-gray-600">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg" data-mock="true">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-heart text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">Charity</p>
+                                        <p class="text-sm text-gray-500">2 receipt books • $8,300</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">Active</span>
+                                    <button class="text-gray-400 hover:text-gray-600">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg" data-mock="true">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-graduation-cap text-purple-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900">Education</p>
+                                        <p class="text-sm text-gray-500">1 receipt book • $3,200</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">Pending</span>
+                                    <button class="text-gray-400 hover:text-gray-600">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- @END_MAP )) -->
+                        </div>
+                    </div>
+                    <!-- @END_COMPONENT: TaskSummary -->
+                </div>
+                <!-- @END_COMPONENT: MainDashboardGrid -->
+
+                <!-- @COMPONENT: QuickActions [commonly used functions] -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200">
+                    <div class="px-6 py-4 border-b border-gray-200">
+                        <h3 class="text-lg font-semibold text-gray-900">Quick Actions</h3>
+                    </div>
+                    <div class="p-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <button class="flex flex-col items-center space-y-3 p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-islamic-300 hover:bg-islamic-50 transition-colors" data-event="click:openReceiptEntry" data-implementation="Should open receipt entry form">
+                            <div class="w-12 h-12 bg-islamic-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-receipt text-islamic-600 text-xl"></i>
+                            </div>
+                            <div class="text-center">
+                                <p class="font-medium text-gray-900">Add Receipt</p>
+                                <p class="text-xs text-gray-500">Enter new donation</p>
+                            </div>
+                        </button>
+
+                        <button class="flex flex-col items-center space-y-3 p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-red-300 hover:bg-red-50 transition-colors" data-event="click:openExpenseForm" data-implementation="Should open expense entry form">
+                            <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-credit-card text-red-600 text-xl"></i>
+                            </div>
+                            <div class="text-center">
+                                <p class="font-medium text-gray-900">Add Expense</p>
+                                <p class="text-xs text-gray-500">Record expenditure</p>
+                            </div>
+                        </button>
+
+                        <button class="flex flex-col items-center space-y-3 p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors" data-event="click:openReceiptBookForm" data-implementation="Should open receipt book creation form">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-book text-blue-600 text-xl"></i>
+                            </div>
+                            <div class="text-center">
+                                <p class="font-medium text-gray-900">New Receipt Book</p>
+                                <p class="text-xs text-gray-500">Create & assign</p>
+                            </div>
+                        </button>
+
+                        <button class="flex flex-col items-center space-y-3 p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-primary-300 hover:bg-primary-50 transition-colors" data-event="click:viewReports" data-implementation="Should navigate to reports page">
+                            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-chart-bar text-primary-600 text-xl"></i>
+                            </div>
+                            <div class="text-center">
+                                <p class="font-medium text-gray-900">View Reports</p>
+                                <p class="text-xs text-gray-500">Financial analytics</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <!-- @END_COMPONENT: QuickActions -->
+            </main>
+            <!-- @END_COMPONENT: DashboardContent -->
+        </div>
+        <!-- @END_COMPONENT: MainContent -->
+    </div>
+    <!-- @END_COMPONENT: AppContainer -->
+
+    <!-- @COMPONENT: Modal [backup options modal overlay] -->
+    <div id="backupModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl shadow-xl max-w-md w-full m-4">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-semibold text-gray-900">Data Backup Options</h3>
+                    <button class="text-gray-400 hover:text-gray-600" data-event="click:closeBackupModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6 space-y-4">
+                <button class="w-full flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors" data-event="click:downloadSQLBackup" data-implementation="Should generate and download MySQL backup file">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-database text-blue-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-900">MySQL Database Export</p>
+                            <p class="text-sm text-gray-500">Complete database backup (.sql)</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-download text-gray-400"></i>
+                </button>
+
+                <button class="w-full flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors" data-event="click:downloadCSVBackup" data-implementation="Should generate and download CSV files in ZIP">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-file-csv text-green-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-900">CSV Export (ZIP)</p>
+                            <p class="text-sm text-gray-500">All tables as separate CSV files</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-download text-gray-400"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: Modal -->
+
+    <!-- @COMPONENT: CashCollectorDashboard [alternative view for cash collectors] -->
+    <div id="cashCollectorView" class="hidden">
+        <!-- This would show a simplified dashboard for cash collectors with only receipt entry capabilities -->
+    </div>
+    <!-- @END_COMPONENT: CashCollectorDashboard -->
+
+    <!-- @COMPONENT: PublicReportsPage [public-facing financial transparency] -->
+    <div id="publicReportsView" class="hidden min-h-screen bg-gray-50">
+        <div class="bg-white shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <div class="text-center">
+                    <h1 class="text-3xl font-bold text-gray-900">Masjid Financial Transparency</h1>
+                    <p class="mt-2 text-gray-600">Public financial reports and donation tracking</p>
+                    <p class="text-sm text-gray-500 mt-1">Last updated: <span data-bind="reports.lastUpdated">January 15, 2024</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+            <!-- Public Financial Summary -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Total Donations Received</h3>
+                    <p class="text-3xl font-bold text-islamic-600" data-bind="public.totalIncome">$45,250</p>
+                    <p class="text-sm text-gray-500 mt-1">All donation categories combined</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Total Expenses</h3>
+                    <p class="text-3xl font-bold text-red-600" data-bind="public.totalExpenses">$18,400</p>
+                    <p class="text-sm text-gray-500 mt-1">Operational and project costs</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Current Balance</h3>
+                    <p class="text-3xl font-bold text-primary-600" data-bind="public.currentBalance">$26,850</p>
+                    <p class="text-sm text-gray-500 mt-1">Available for future projects</p>
+                </div>
+            </div>
+
+            <!-- Public Tasks Breakdown -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-xl font-semibold text-gray-900">Donation Categories</h2>
+                </div>
+                <div class="p-6">
+                    <!-- @FUNCTIONALITY: This table should display published donation categories with their totals -->
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-gray-200">
+                                    <th class="text-left py-3 px-4 text-sm font-semibold text-gray-900">Category</th>
+                                    <th class="text-right py-3 px-4 text-sm font-semibold text-gray-900">Amount Raised</th>
+                                    <th class="text-center py-3 px-4 text-sm font-semibold text-gray-900">Receipt Books</th>
+                                    <th class="text-center py-3 px-4 text-sm font-semibold text-gray-900">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="space-y-2">
+                                <!-- @MAP: publicTasks.map(task => ( -->
+                                <tr class="border-b border-gray-100" data-mock="true">
+                                    <td class="py-3 px-4">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-8 h-8 bg-islamic-100 rounded-lg flex items-center justify-center">
+                                                <i class="fas fa-hammer text-islamic-600"></i>
+                                            </div>
+                                            <span class="font-medium text-gray-900">Construction Project</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-3 px-4 text-right font-semibold text-islamic-600">$12,450</td>
+                                    <td class="py-3 px-4 text-center text-gray-500">3</td>
+                                    <td class="py-3 px-4 text-center">
+                                        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">Active</span>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-gray-100" data-mock="true">
+                                    <td class="py-3 px-4">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                                <i class="fas fa-heart text-blue-600"></i>
+                                            </div>
+                                            <span class="font-medium text-gray-900">Charity & Poor Relief</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-3 px-4 text-right font-semibold text-islamic-600">$8,300</td>
+                                    <td class="py-3 px-4 text-center text-gray-500">2</td>
+                                    <td class="py-3 px-4 text-center">
+                                        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">Active</span>
+                                    </td>
+                                </tr>
+                                <!-- @END_MAP )) -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: PublicReportsPage -->
+
+    <script>
+        // TODO: Implement business logic, API calls, and state management
+        
+        (function() {
+            'use strict';
+            
+            // Modal management
+            const backupModal = document.getElementById('backupModal');
+            
+            // Show backup modal
+            document.addEventListener('click', function(e) {
+                if (e.target.matches('[data-event*="showBackupModal"]')) {
+                    backupModal.classList.remove('hidden');
+                    backupModal.classList.add('flex');
+                }
+                
+                // Close backup modal
+                if (e.target.matches('[data-event*="closeBackupModal"]')) {
+                    backupModal.classList.add('hidden');
+                    backupModal.classList.remove('flex');
+                }
+            });
+            
+            // Navigation active states
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    navLinks.forEach(l => l.classList.remove('bg-primary-100', 'text-primary-700', 'font-medium'));
+                    navLinks.forEach(l => l.classList.add('text-gray-700'));
+                    this.classList.add('bg-primary-100', 'text-primary-700', 'font-medium');
+                    this.classList.remove('text-gray-700');
+                });
+            });
+            
+            // Close modal when clicking outside
+            backupModal.addEventListener('click', function(e) {
+                if (e.target === backupModal) {
+                    backupModal.classList.add('hidden');
+                    backupModal.classList.remove('flex');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

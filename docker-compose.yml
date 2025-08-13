@@ -1,0 +1,44 @@
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://masjid_user:masjid_secure_password_2024@postgres:5432/masjid_erp
+    depends_on:
+      - postgres
+    restart: unless-stopped
+    volumes:
+      - app_data:/app/data
+
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=masjid_erp
+      - POSTGRES_USER=masjid_user
+      - POSTGRES_PASSWORD=masjid_secure_password_2024
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db:/docker-entrypoint-initdb.d
+    restart: unless-stopped
+
+  # Optional: Redis for session storage (if needed in future)
+  # redis:
+  #   image: redis:7-alpine
+  #   ports:
+  #     - "6379:6379"
+  #   restart: unless-stopped
+
+volumes:
+  postgres_data:
+  app_data:
+
+networks:
+  default:
+    name: masjid_erp_network
